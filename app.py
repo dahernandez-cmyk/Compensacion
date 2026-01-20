@@ -11,7 +11,7 @@ server = 'replica-sql.database.windows.net,1433'
 database = 'replica_btk_coninsa'
 username = 'coninsalectura'
 password = 'obw9DcMoyP7T5i' 
-driver = '{ODBC Driver 18 for SQL Server}'
+driver = '{ODBC Driver 17 for SQL Server}' #Usar 18 para cuando este localmente
 
 # --- FUNCIÓN PARA CONECTAR Y EXTRAER ---
 def obtener_datos(query):
