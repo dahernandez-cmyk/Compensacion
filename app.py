@@ -16,7 +16,9 @@ driver = '{ODBC Driver 18 for SQL Server}'
 # --- FUNCIÓN PARA CONECTAR Y EXTRAER ---
 def obtener_datos(query):
     try:
-        conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+        # Solo si usas el Driver 18
+        conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password};Encrypt=yes;TrustServerCertificate=yes'
+        #conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
         # Usamos pandas para leer directamente con la conexión
         with pyodbc.connect(conn_str) as conn:
             df = pd.read_sql(query, conn)
